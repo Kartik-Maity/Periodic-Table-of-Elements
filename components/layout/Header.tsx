@@ -1,10 +1,13 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { SearchBar } from '@/components/search/SearchBar';
 
 export function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const pathname = usePathname();
 
   return (
     <header
@@ -18,9 +21,13 @@ export function Header() {
           className="flex items-center gap-2 flex-shrink-0 no-underline hover:no-underline"
           aria-label="Interactive Periodic Table - Home"
         >
-          <div className="w-8 h-8 rounded-lg bg-[var(--accent)] flex items-center justify-center text-white font-bold text-sm font-mono flex-shrink-0">
-            Pt
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Periodic Table Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 rounded-lg flex-shrink-0 object-cover"
+          />
           <span
             className="hidden sm:block font-bold text-[var(--text-primary)] text-base leading-tight"
             style={{ fontFamily: 'var(--font-title)' }}
@@ -40,15 +47,23 @@ export function Header() {
             { href: '/',        label: 'Table' },
             { href: '/quiz',    label: 'Quiz' },
             { href: '/compare', label: 'Compare' },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="px-3 py-1.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] rounded-[var(--radius-md)] transition-colors no-underline hover:no-underline"
-            >
-              {label}
-            </Link>
-          ))}
+          ].map(({ href, label }) => {
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`px-3 py-1.5 text-sm rounded-[var(--radius-md)] transition-colors no-underline hover:no-underline ${
+                  isActive
+                    ? 'bg-[var(--accent-light)] font-bold'
+                    : 'text-[var(--text-secondary)] font-medium hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]'
+                }`}
+                style={isActive ? { color: 'var(--accent)' } : undefined}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Mobile hamburger */}
@@ -71,16 +86,24 @@ export function Header() {
             { href: '/',        label: '🏠 Table' },
             { href: '/quiz',    label: '🎯 Quiz' },
             { href: '/compare', label: '⇄ Compare' },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              className="block px-5 py-3 text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] no-underline hover:no-underline"
-            >
-              {label}
-            </Link>
-          ))}
+          ].map(({ href, label }) => {
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`block px-5 py-3 text-sm no-underline hover:no-underline ${
+                  isActive
+                    ? 'bg-[var(--accent-light)] font-bold border-l-4 border-[var(--accent)]'
+                    : 'text-[var(--text-primary)] font-medium hover:bg-[var(--bg-secondary)]'
+                }`}
+                style={isActive ? { color: 'var(--accent)' } : undefined}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>

@@ -10,14 +10,23 @@ export const metadata: Metadata = {
   },
   description:
     'Explore all 118 elements with interactive details, quizzes, and electron configuration visualizers. Free for everyone.',
-  keywords: ['periodic table', 'elements', 'chemistry', 'interactive', 'education'],
+  keywords: ['periodic table', 'elements', 'chemistry', 'interactive', 'education', 'science', 'chemistry tools'],
   openGraph: {
     title: 'Interactive Periodic Table',
-    description: 'Explore all 118 elements interactively. Free.',
+    description: 'Explore all 118 elements interactively. Free educational resource.',
     type: 'website',
     locale: 'en_US',
+    siteName: 'Interactive Periodic Table',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Interactive Periodic Table',
+    description: 'Explore all 118 elements with interactive details and visualizers.',
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: 'CjutMeNF0bgfCiegbEKMzG_lR0y9TDsc_uPXOttYqPs',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
