@@ -11,7 +11,12 @@ export const metadata: Metadata = {
   },
   description:
     'Explore all 118 elements with interactive details, quizzes, and electron configuration visualizers. Free for everyone.',
-  keywords: ['periodic table', 'elements', 'chemistry', 'interactive', 'education', 'science', 'chemistry tools'],
+  keywords: [
+    'periodic table', 'elements', 'chemistry', 'interactive', 'education', 'science', 'chemistry tools',
+    'interactive periodic table', 'chemical elements', 'atomic number', 'atomic weight', 'electron configuration',
+    'chemistry quiz', 'periodic table game', 'study chemistry', 'learn periodic table', 'mendeleev', 
+    'alkali metals', 'halogens', 'noble gases', 'chemistry app', 'chemistry student resource', '3d periodic table'
+  ],
   openGraph: {
     title: 'Interactive Periodic Table',
     description: 'Explore all 118 elements interactively. Free educational resource.',
