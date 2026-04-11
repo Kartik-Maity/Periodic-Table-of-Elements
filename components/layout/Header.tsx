@@ -19,7 +19,7 @@ export function Header() {
         <Link
           href="/"
           className="flex items-center gap-2 flex-shrink-0 no-underline hover:no-underline"
-          aria-label="Interactive Periodic Table - Home"
+          aria-label="Learn Periodic Table - Home"
         >
           <Image
             src="/logo.png"

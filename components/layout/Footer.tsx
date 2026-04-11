@@ -54,7 +54,7 @@ export function Footer() {
 
         {/* Bottom copyright bar */}
         <div className="mt-12 pt-6 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--text-muted)]">
-          <p>© {new Date().getFullYear()} Interactive Periodic Table. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Learn Periodic Table. All rights reserved.</p>
           <div className="flex items-center gap-1.5 font-medium">
             <span>Built with Modern Web Tech</span>
             <span className="text-[var(--accent)] text-lg leading-none mt-0.5">⚛</span>
