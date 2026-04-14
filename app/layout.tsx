@@ -4,7 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://learnperiodic.vercel.app'),
+  metadataBase: new URL((process.env.NEXT_PUBLIC_SITE_URL || 'https://learnperiodic.vercel.app').replace(/\/$/, '')),
   title: {
     default: 'Learn Periodic Table — Learn Atoms Online',
     template: '%s | Periodic Table',
